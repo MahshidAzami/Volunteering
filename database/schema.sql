@@ -1,0 +1,49 @@
+CREATE TABLE opportunities
+( id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT
+(64) NOT NULL,
+time_frame TEXT
+(64) NOT NULL,
+  duty TEXT
+(600) NOT NULL
+);
+
+insert into opportunities
+    (title, time_frame, duty)
+VALUES
+    ("Cleaning" , "Friday 10 a.m - 12 p.m", "The church kitchen
+will usually be cleaned by the staff using it, but weekly maintenance cleaning is essential for keeping the room shining. Empty all trash cans and wipe down the countertops, stovetops and sinks
+with disinfectant spray. Sweep and mop the floors and wash all of the windows.");
+
+insert into opportunities
+    (title, time_frame, duty)
+VALUES
+    ("Computer" , "Sunday 9:30 a.m - 12:30 p.m", "The same as any other business or organization would
+use computing for publishing, storage info, organizing info, doing bookkeeping, searching information, communications etc.");
+
+
+insert into opportunities
+    (title, time_frame, duty)
+VALUES
+    ("Children" , "Sunday 11 a.m - 12 p.m", "We believe that children and young people can follow Jesus and be full members of the church, and that discipleship is possible at any age. They are integral to our churches, but we need to make sure there are no obstacles preventing them from getting involved.we need
+to keep children intertained during the preach at church so we have seprate room for children above 4
+with some games and activites in different groups.
+    there is usually 20-30 kids which are supervised by 8 adults.");
+
+
+insert into opportunities
+    (title, time_frame, duty)
+VALUES
+    ("Pray Ministry" , "Sunday 12 p.m - 12:30 p.m", "It
+is important that people who take part in prayer ministry during public worship, when the church is responsible for the ministry are trained, accountable and follow the church's policy on prayer ministry.An effective prayer
+ministry requires people's hearts be prepared through teaching.");
+
+
+
+insert into opportunities
+    (title, time_frame, duty)
+VALUES
+    ("Translation" , "Sunday 10:30 a.m - 12 p.m", "there are peaple from 21 different nationalities in our church. most of them speak English but we always need people who can translate from English to Persian and Kurdish.");
+
+
+
