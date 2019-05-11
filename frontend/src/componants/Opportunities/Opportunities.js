@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./opportunity.css";
+import Opportunity from "../Opportunity/Opportunity";
 
 class Opportunities extends Component {
   constructor(props) {
@@ -29,21 +30,13 @@ class Opportunities extends Component {
         <div className="card-deck container section">
           {this.state.opportunities.map(o => {
             return (
-              <div className="card opportus">
-                <img
-                  className="card-img-top"
-                  src={o.pic}
-                  alt="Card image cap"
-                />
-                <div className="card-body ">
-                  <h5 className="card-title">{o.title}</h5>
-                  <h5 className="card-title">Time : {o.time_frame}</h5>
-                  <p className="card-text">{o.duty}</p>
-                  <a href="" className="btn btn-primary">
-                    Apply
-                  </a>
-                </div>
-              </div>
+              <Opportunity
+                key={o.title}
+                pic={o.pic}
+                title={o.title}
+                time_fram={o.time_fram}
+                duty={o.duty}
+              />
             );
           })}
         </div>
