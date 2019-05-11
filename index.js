@@ -20,7 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/opportunities", (req, res) => {
+app.get("/", (req, res) => {
   const sql = "SELECT * FROM opportunities";
   db.all(sql, [], (err, rows) => {
     if (err) {
