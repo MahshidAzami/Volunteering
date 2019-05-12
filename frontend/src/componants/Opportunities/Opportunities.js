@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./opportunity.css";
 import Opportunity from "../Opportunity/Opportunity";
-
+const host = process.env.HOST;
 class Opportunities extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +11,7 @@ class Opportunities extends Component {
     };
   }
   componentDidMount() {
-    fetch(`http://localhost:5000/opportunities`)
+    fetch(`${host}/api/opportunities`)
       .then(res => res.json())
       .then(data => {
         this.setState({
