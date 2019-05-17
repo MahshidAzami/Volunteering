@@ -3,9 +3,10 @@ const filename = "database/database.sqlite";
 const sqlite3 = require("sqlite3").verbose();
 
 function resetDataBase() {
-  if (fs.existsSync(filename)) {
-    fs.unlinkSync(filename);
-  }
+  // if (fs.existsSync(filename)) {
+  //   console.log("its busy");
+  //   fs.unlinkSync(filename);
+  // }
 
   let db = new sqlite3.Database(filename);
 
