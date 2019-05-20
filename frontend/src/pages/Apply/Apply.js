@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Apply.css";
 import ApplicationForm from "../../component/ApplicationForm";
 
-const host = process.env.HOST;
 class Apply extends Component {
   state = {
     isLogin: true

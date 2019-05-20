@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./opportunity.css";
 import Opportunity from "./Opportunity/Opportunity";
-const host = process.env.HOST;
+import { NavLink } from "react-router-dom";
+
 class Opportunities extends Component {
   constructor(props) {
     super(props);
@@ -28,18 +29,23 @@ class Opportunities extends Component {
       return <span>Loading... </span>;
     } else {
       return (
-        <div className="card-deck container section">
-          {this.state.opportunities.map(o => {
-            return (
-              <Opportunity
-                key={o.title}
-                pic={o.pic}
-                title={o.title}
-                time_fram={o.time_fram}
-                duty={o.duty}
-              />
-            );
-          })}
+        <div>
+          <div className="card-deck container section">
+            {this.state.opportunities.map(o => {
+              return (
+                <Opportunity
+                  key={o.title}
+                  pic={o.pic}
+                  title={o.title}
+                  time_frame={o.time_frame}
+                  duty={o.duty}
+                />
+              );
+            })}
+          </div>
+          <NavLink to="/Apply" className="btn btn-primary">
+            Apply
+          </NavLink>
         </div>
       );
     }

@@ -1,8 +1,8 @@
-// const resetDataBase = require("./database/utils/db-tools");
+///const resetDataBase = require("./database/utils/db-tools");
 const filename = "database/database.sqlite";
 const sqlite3 = require("sqlite3").verbose();
 let db = new sqlite3.Database(filename);
-// resetDataBase();
+/// resetDataBase();
 // db.run("PRAGMA foreign_keys = ON");
 
 const express = require("express");
@@ -64,6 +64,41 @@ app.post("/api/apply", function(req, res) {
     }
     console.log("Request succeeded, new data fetched", rows);
   });
+  res.sendStatus(200);
+});
+
+//////////////////////////////REQUESTS//////////////////
+
+app.get("/api/requests", (req, res) => {
+  console.log("req req");
+  const sql = "SELECT * FROM applications";
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      console.log("ERROR fetching from the database:", err);
+      return;
+    }
+    console.log("Request succeeded, new data fetched", rows);
+    res.status(200).json({
+      requests: rows
+    });
+  });
+});
+
+//////////////////////////Login///////////////////////
+
+app.post("/api/login", (req, res) => {
+  const newRes = req.body;
+  const sql = `insert into admins (email, password)
+  VALUES ("${newRes.email}", "${newRes.password}")`;
+  console.log(sql);
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      console.log("ERROR fetching from the database:", err);
+      return;
+    }
+    console.log("Request succeeded, new data fetched", rows);
+  });
+
   res.sendStatus(200);
 });
 

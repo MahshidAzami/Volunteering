@@ -28,3 +28,15 @@ member boolean,
 note Text
 (2000)  
 );
+
+CREATE TABLE admins
+(    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL
+);
+
+INSERT INTO admins
+  (email, password)
+VALUES
+  ("test@test.ir", "sdsdfs")
+

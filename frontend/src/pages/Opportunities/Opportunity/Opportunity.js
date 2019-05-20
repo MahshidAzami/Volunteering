@@ -8,9 +8,6 @@ function Opportunity(props) {
         <h5 className="card-title">{props.title}</h5>
         <h5 className="card-title">Time : {props.time_frame}</h5>
         <p className="card-text">{props.duty}</p>
-        <a href="" className="btn btn-primary">
-          Apply
-        </a>
       </div>
     </div>
   );

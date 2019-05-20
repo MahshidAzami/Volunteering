@@ -11,13 +11,13 @@ function MainNavigation(props) {
       <div className="main-navigation__items">
         <ul>
           <li>
-            <NavLink to="/Apply">Apply</NavLink>
-          </li>
-          <li>
             <NavLink to="/Opportunities">Opportunities</NavLink>
           </li>
           <li>
-            <NavLink to="/Request">Request</NavLink>
+            <NavLink to="/Apply">Apply</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Requests">Requests</NavLink>
           </li>
           <li>
             <NavLink to="/Response">Response</NavLink>
