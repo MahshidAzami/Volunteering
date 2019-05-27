@@ -37,13 +37,15 @@ class ApplicationForm extends Component {
       }
     })
       .then(res => {
-        if (res.status !== 200 && res.status !== 201) {
+        if (res.status !== 200 || res.status !== 201) {
           throw new Error("Failed!");
         }
         return res.json();
       })
       .catch(err => {
         console.log(err);
+
+        ///display a message to user : try latar
       });
   };
   render() {

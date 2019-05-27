@@ -4,6 +4,7 @@ const sqlite3 = require("sqlite3").verbose();
 let db = new sqlite3.Database(filename);
 /// resetDataBase();
 // db.run("PRAGMA foreign_keys = ON");
+// const postmark = require("./postmark/postmark");
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -50,6 +51,10 @@ app.get("/api/apply", (req, res) => {
     });
   });
 });
+/////////////////////////////////////////////////////////////////////
+
+var postmark = require("postmark");
+var client = new postmark.ServerClient("d8033137-9545-42db-84c1-581101321756");
 
 app.post("/api/apply", function(req, res) {
   const newRes = req.body;
@@ -63,9 +68,30 @@ app.post("/api/apply", function(req, res) {
       return;
     }
     console.log("Request succeeded, new data fetched", rows);
+    client.sendEmail({
+      From: "01707708@stockton.ac.uk",
+      To: `${newRes.email}`,
+      Subject: "second try",
+      TextBody: "Hello from Postmark!"
+    });
   });
   res.sendStatus(200);
 });
+
+///////////////////////Email/////////////////////////////////
+
+// Require:
+
+// Send an email:
+
+// app.get("/email-confirmation", (req, res) => {
+//   client.sendEmail({
+//     From: "01707708@stockton.ac.uk",
+//     To: "m.azami2008@gmail.com",
+//     Subject: "first try",
+//     TextBody: "Hello from Postmark!"
+//   });
+// });
 
 //////////////////////////////REQUESTS//////////////////
 
