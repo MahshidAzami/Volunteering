@@ -43,7 +43,10 @@ class Opportunities extends Component {
               );
             })}
           </div>
-          <NavLink to="/Apply" className="btn btn-primary">
+          <NavLink
+            to="/Apply"
+            className="btn btn-primary btn-lg btn-block position"
+          >
             Apply
           </NavLink>
         </div>

@@ -24,7 +24,6 @@ first_name TEXT
 (64) NOT NULL,
 email Text
 (64) NOT NULL,
-member boolean,
 note Text
 (2000)  
 );
@@ -35,8 +34,5 @@ CREATE TABLE admins
     password TEXT NOT NULL
 );
 
-INSERT INTO admins
-  (email, password)
-VALUES
-  ("test@test.ir", "sdsdfs")
+
 

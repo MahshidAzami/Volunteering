@@ -98,35 +98,6 @@ class ApplicationForm extends Component {
               <option>Translation</option>
             </select>
           </div>
-          <p>Are you already a member of Stockton Parish Church?</p>
-          <div className="custom-control custom-radio custom-control-inline">
-            <input
-              type="radio"
-              id="customRadioInline1"
-              name="customRadioInline1"
-              className="custom-control-input"
-            />
-            <label
-              className="custom-control-label"
-              htmlFor="customRadioInline1"
-            >
-              Yes
-            </label>
-          </div>
-          <div className="custom-control custom-radio custom-control-inline">
-            <input
-              type="radio"
-              id="customRadioInline2"
-              name="customRadioInline1"
-              className="custom-control-input"
-            />
-            <label
-              className="custom-control-label"
-              htmlFor="customRadioInline2"
-            >
-              No
-            </label>
-          </div>
           <div className="form-group">
             <label htmlFor="exampleFormControlTextarea1">
               Why you are intrested to join this group :

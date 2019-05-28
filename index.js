@@ -37,7 +37,7 @@ app.get("/api/opportunities", (req, res) => {
     });
   });
 });
-/////////////////////////////////////////////Apply////////////////////////
+/////////////////////////////////////////////ApplyGET////////////////////////
 app.get("/api/apply", (req, res) => {
   const sql = "SELECT * FROM applications";
   db.all(sql, [], (err, rows) => {
@@ -51,7 +51,7 @@ app.get("/api/apply", (req, res) => {
     });
   });
 });
-/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////Apply-POST-postmark////////////////////////
 
 var postmark = require("postmark");
 var client = new postmark.ServerClient("d8033137-9545-42db-84c1-581101321756");
@@ -71,27 +71,19 @@ app.post("/api/apply", function(req, res) {
     client.sendEmail({
       From: "01707708@stockton.ac.uk",
       To: `${newRes.email}`,
-      Subject: "second try",
-      TextBody: "Hello from Postmark!"
+      Subject: "Confirmation",
+      TextBody: `Hi ${newRes.first_name},
+      
+      Thanks for volunteering in ${
+        newRes.opportunity
+      } group. we will review your application and will be in touch through your email.
+      please feel free to reply to this email if you have any question.
+      
+      Mahshid Azami`
     });
   });
   res.sendStatus(200);
 });
-
-///////////////////////Email/////////////////////////////////
-
-// Require:
-
-// Send an email:
-
-// app.get("/email-confirmation", (req, res) => {
-//   client.sendEmail({
-//     From: "01707708@stockton.ac.uk",
-//     To: "m.azami2008@gmail.com",
-//     Subject: "first try",
-//     TextBody: "Hello from Postmark!"
-//   });
-// });
 
 //////////////////////////////REQUESTS//////////////////
 
