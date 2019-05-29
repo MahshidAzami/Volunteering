@@ -16,7 +16,7 @@ class ApplicationForm extends Component {
     const name = this.nameEl.current.value;
     const surname = this.surnameEl.current.value;
     const email = this.emailEl.current.value;
-    // const member = this.memberEl.current.value;
+
     const note = this.noteEl.current.value;
     const opportunity = this.opportunityEl.current.value;
 
@@ -24,7 +24,7 @@ class ApplicationForm extends Component {
       first_name: name,
       surname: surname,
       email: email,
-      //   member: member,
+
       note: note,
       opportunity: opportunity
     };

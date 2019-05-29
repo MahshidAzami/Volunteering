@@ -25,7 +25,9 @@ first_name TEXT
 email Text
 (64) NOT NULL,
 note Text
-(2000)  
+(2000),  
+response Text
+(2000)
 );
 
 CREATE TABLE admins
