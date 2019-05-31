@@ -92,7 +92,7 @@ app.post("/api/apply", function(req, res) {
 
 //////////////////////////////Response///////////////////
 
-app.put("/api/aprove", function(req, res) {
+app.put("/api/approve", function(req, res) {
   const newRes = req.body;
   const sql = `UPDATE applications SET response = "${
     newRes.response
@@ -155,7 +155,7 @@ app.get("/api/requests", (req, res) => {
   if (!req.isAuth) {
     throw new Error("Admin previllage");
   }
-  const sql = "SELECT * FROM applications";
+  const sql = "SELECT * FROM applications WHERE response IS NULL";
   db.all(sql, [], (err, rows) => {
     if (err) {
       console.log("ERROR fetching from the database:", err);
@@ -166,57 +166,6 @@ app.get("/api/requests", (req, res) => {
       requests: rows
     });
   });
-});
-
-/////////////////////////////Respond///////////
-
-app.get("/api/respond", (req, res) => {
-  if (!req.isAuth) {
-    throw new Error("Admin previllage");
-  }
-  const sql = "SELECT * FROM applications";
-  db.all(sql, [], (err, rows) => {
-    if (err) {
-      console.log("ERROR fetching from the database:", err);
-      return;
-    }
-    console.log("Request succeeded, new data fetched", rows);
-    res.status(200).json({
-      requests: rows
-    });
-  });
-});
-
-app.post("/api/respond", function(req, res) {
-  if (!req.isAuth) {
-    throw new Error("Admin previllage");
-  }
-  const newRes = req.body;
-  const sql = `insert into applications (opportunity, first_name, surname, email, note)
-  VALUES ("${newRes.opportunity}", "${newRes.first_name}", "${newRes.surname}",
-   "${newRes.email}", "${newRes.note}")`;
-  console.log(sql);
-  db.all(sql, [], (err, rows) => {
-    if (err) {
-      console.log("ERROR fetching from the database:", err);
-      return;
-    }
-    console.log("Request succeeded, new data fetched", rows);
-    client.sendEmail({
-      From: "01707708@stockton.ac.uk",
-      To: `${newRes.email}`,
-      Subject: "Confirmation",
-      TextBody: `Hi ${newRes.first_name},
-      
-      Thanks for volunteering in ${
-        newRes.opportunity
-      } group. we will review your application and will be in touch through your email.
-      please feel free to reply to this email if you have any question.
-      
-      Mahshid Azami`
-    });
-  });
-  res.sendStatus(200);
 });
 
 //////////////////////////Login///////////////////////

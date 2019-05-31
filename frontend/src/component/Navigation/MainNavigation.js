@@ -24,11 +24,7 @@ const MainNavigation = props => (
                   <NavLink to="/requests">Requests</NavLink>
                 </li>
               )}
-              {context.token && (
-                <li>
-                  <NavLink to="/response">Response</NavLink>
-                </li>
-              )}
+
               <li>
                 <NavLink to="/login">Login</NavLink>
               </li>

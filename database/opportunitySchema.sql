@@ -21,7 +21,7 @@ VALUES
 to keep children intertained during the preach at church so we have seprate room for children above 4
 with some games and activites in different groups.
     there is usually 20-30 kids which are supervised by 8 adults.", "https:
-//frontstagesound.com/wp-content/uploads/2017/08/Full-8_min.jpg");
+//www.ellaslist.com.au/system/kids_classes/featured_images/000/005/224/original/data?1521536694");
 
 
 insert into opportunities

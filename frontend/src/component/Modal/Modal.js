@@ -6,7 +6,7 @@ const Modal = props => (
     <header className="modal__header">
       <h1>{props.title}</h1>
     </header>
-    <section className="modal__content">{props.children}</section>
+    <section className="modal__content">{props.content}</section>
     <section className="modal__actions">
       {props.canCancel && (
         <button className="btn btn-primary but" onClick={props.onCancel}>
@@ -20,7 +20,7 @@ const Modal = props => (
       )}
       {props.canConfirm && (
         <button className="btn btn-primary but" onClick={props.onConfirm}>
-          Confirm
+          Approve
         </button>
       )}
     </section>

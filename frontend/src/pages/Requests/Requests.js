@@ -35,7 +35,7 @@ class Requests extends Component {
       response: "confirmed"
     };
 
-    fetch("/api/aprove", {
+    fetch("/api/approve", {
       method: "PUT",
       body: JSON.stringify(requestBody),
       headers: {
@@ -117,16 +117,15 @@ class Requests extends Component {
           {this.state.responding && <Backdrop />}
           {this.state.responding && (
             <Modal
-              title="Request"
+              title={this.state.selectedReq.first_name}
+              content={this.state.selectedReq.note}
               canCancel
               canReject
               canConfirm
               onCancel={this.modalCancelHandler}
               onConfirm={this.modalConfirmHandler}
               onReject={this.modalRejectHandler}
-            >
-              <p>Respond</p>
-            </Modal>
+            />
           )}
           <div>
             <table className="table table-hover">
@@ -137,7 +136,7 @@ class Requests extends Component {
                   <th scope="col">Surname</th>
                   <th scope="col">Email</th>
                   <th scope="col">Opportunity</th>
-                  <th scope="col">Respond</th>
+                  <th scope="col">Response</th>
                 </tr>
               </thead>
               {this.state.requests.map(o => {
@@ -145,7 +144,7 @@ class Requests extends Component {
                   <tbody>
                     <Request
                       key={o.id}
-                      reQid={o.id}
+                      id={o.id}
                       first_name={o.first_name}
                       surname={o.surname}
                       email={o.email}

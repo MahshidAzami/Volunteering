@@ -5,7 +5,7 @@ import Opportunities from "./pages/Opportunities/Opportunities";
 import Apply from "./pages/Apply/Apply";
 import Login from "./pages/Login/Login";
 import Requests from "./pages/Requests/Requests";
-import Response from "./pages/Response/Response";
+
 import MainNavigation from "./component/Navigation/MainNavigation";
 import Authcontext from "./context/Authcontext";
 
@@ -44,9 +44,6 @@ class App extends Component {
               <Route path="/login" component={Login} />
               {this.state.token && (
                 <Route path="/requests" component={Requests} />
-              )}
-              {this.state.token && (
-                <Route path="/response" component={Response} />
               )}
             </Switch>
           </main>
